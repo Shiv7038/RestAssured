@@ -21,10 +21,10 @@ public class BasicMetohds {
 		Response resonse=given().log().all().when().get("users?page=2").then().extract().response(); 
         // to get the response in Response format
 		
-		JsonPath js=resonse.jsonPath();
-		String a=js.getString("data.id");
-		System.out.println(a);
-		
+//		JsonPath js=resonse.jsonPath();
+//		String a=js.getString("data.id");
+//		System.out.println(a);
+//		
 		String stringResonse=given().log().all().when().get("users?page=2").then().extract()
                 .response().asPrettyString();
            // to get response in String format
@@ -32,6 +32,8 @@ public class BasicMetohds {
        String stringResonse1=given().queryParam("page",2).when().get("api/users").then().extract()
                  .response().asPrettyString();
             // to get response in PrittyString format
+       
+       
         System.out.println(stringResonse1);
 
 	}
