@@ -33,6 +33,5 @@ public class BasicMetohds {
                  .response().asPrettyString();
             // to get response in PrittyString format
         System.out.println(stringResonse1);
-
 	}
 }
