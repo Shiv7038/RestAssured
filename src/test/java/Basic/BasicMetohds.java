@@ -27,7 +27,6 @@ public class BasicMetohds {
 //
 		String stringResonse=given().log().all().when().get("users?page=2").then().extract()
                 .response().asPrettyString();
-           // to get response in String format
 
        String stringResonse1=given().queryParam("page",2).when().get("api/users").then().extract()
                  .response().asPrettyString();
@@ -68,4 +67,5 @@ public class BasicMetohds {
 				"    \"job\": \"zion resident\"\n" +
 				"}").when().delete("api/users/2").then().log().all();
 	}
+
 }
