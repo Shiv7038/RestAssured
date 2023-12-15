@@ -36,5 +36,6 @@ public class BasicMetohds {
        
         System.out.println(stringResonse1);
 
+
 	}
 }
