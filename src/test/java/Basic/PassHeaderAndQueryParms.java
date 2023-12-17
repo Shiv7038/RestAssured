@@ -2,14 +2,12 @@ package Basic;
 
 import io.restassured.RestAssured;
 import org.junit.Test;
-
 import java.util.HashMap;
-import java.util.Objects;
 
 import static io.restassured.RestAssured.*;
 
 public class PassHeaderAndQueryParms {
-    String token = "Bearer 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";
+    String token = "Bearer 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";
 
     @Test
     public void passHeader() {
@@ -51,5 +49,13 @@ public class PassHeaderAndQueryParms {
                 .when().get("/repos/Shiv7038/ATT").then().log().all();
     }
 
+
+    @Test
+    public void passPathParams() {
+        RestAssured.baseURI = "https://api.github.com/";
+
+        given().pathParam("path","ATT").header("Authorization", token)
+                .when().get("/repos/Shiv7038/{path}").then().log().all();
+    }
 
 }
